@@ -16,7 +16,7 @@
 
 </head>
 
-<body style="overflow-x:hidden;">
+<body style="overflow-x:hidden;background-color: black;">
     <div id="red">
         <img class="header" src="./ATF/ABOVE THE FLOW.png">
         <!-- <div data-100-top ="opacity:0;left:0;"  data-start="opacity:1;left:20%;"> -->
@@ -344,7 +344,7 @@
     
         <section class="homeStage" data-color="orange">
             <div class="homeStageContent">
-                <p class="projectDescription"  style="display: none;">ความเหลื่อมลำไงล่ะ</p>
+                <p class="projectDescription"  style="display: none;">ความเหลื่อมล้ำไงล่ะ</p>
             </div>
         </section>
 
@@ -779,14 +779,17 @@
                         }
                         
                         var test = document.getElementById("test");
-
-                        if(pos.top <= pos2 || pos.top > (pos2+(1404*3.0))-1000 ){
+                        var tmp = 0 ; 
+                        if((pos.top <= pos2 || pos.top >= (pos2+(1404*3))-2000)&& tmp == 0){
                             // console.log(pos.top,pos2+delta*3.0-1000);
                             test.style.display = "none";
                             index = 0;
+                            
                             return;
                         }else{
+                            tmp = 1; 
                             test.style.display = "block";
+                            // tmp = 0;
                         }
                         
                     });
