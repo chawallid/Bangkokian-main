@@ -147,37 +147,47 @@
         <img class="q1" src="./Pic/section3/case 1_1.png">
         <img class="aq1" src="./Pic/section3/User1.png">
         <div class="choose">กรุณาเลือกรถที่คุณจะไป</div>
-        <img class="train" src="./รอแล้วได้อะไร/train.png">
-        <img class="bus" src="./รอแล้วได้อะไร/bus.png">
-        <img class="taxi" src="./รอแล้วได้อะไร/taxi.png">
-        <img class="ans1" src="./Pic/section3/case 1_2.png">
-        <img class="ans2" src="./Pic/section3/case 1_3.png">
-        <img class="ans3" src="./Pic/section3/case 1_4.png">
+        <div onclick="clickCase1_2()">
+        <img class="train" src="./รอแล้วได้อะไร/train.png"></div>
+        <div onclick="clickCase1_3()">
+        <img class="bus" src="./รอแล้วได้อะไร/bus.png"></div>
+        <div onclick="clickCase1_4()">
+        <img class="taxi" src="./รอแล้วได้อะไร/taxi.png"></div>
+
+        <img id="case 1_2" class="ans1" src="./Pic/section3/case 1_2.png">
+        <img id="case 1_3" class="ans2" src="./Pic/section3/case 1_3.png">
+        <img id="case 1_4" class="ans3" src="./Pic/section3/case 1_4.png">
         <img class="a1" src="./Pic/section3/case 1_5.png">
         <img class="aq2" src="./Pic/section3/User1.png">
         <div class="case1" data-aos="zoom-in">CASE 1.2</div>
         <img class="q2" src="./Pic/section3/case 1_6.png">
         <img class="aq3" src="./Pic/section3/User2.png">
         <div class="choose1">กรุณาเลือกรถที่คุณจะไป</div>
-        <img class="bike" src="./รอแล้วได้อะไร/bike.png">
-        <img class="bus1" src="./รอแล้วได้อะไร/bus.png">
-        <img class="ship" src="./รอแล้วได้อะไร/ship.png">
-        <img class="ans4" src="./Pic/section3/case 1_7.png">
-        <img class="ans5" src="./Pic/section3/case 1_8.png">
-        <img class="ans6" src="./Pic/section3/case 1_9.png">
+        <div onclick="clickCase1_7()">
+        <img class="bike" src="./รอแล้วได้อะไร/bike.png"></div>
+        <div onclick="clickCase1_8()">
+        <img class="bus1" src="./รอแล้วได้อะไร/bus.png"></div>
+        <div onclick="clickCase1_9()">
+        <img class="ship" src="./รอแล้วได้อะไร/ship.png"></div>
+        <img id="case 1_7" class="ans4" src="./Pic/section3/case 1_7.png">
+        <img id="case 1_8" class="ans5" src="./Pic/section3/case 1_8.png">
+        <img id="case 1_9" class="ans6" src="./Pic/section3/case 1_9.png">
         <img class="a2" src="./Pic/section3/case 1_10.png">
         <img class="aq4" src="./Pic/section3/User2.png">
         <div class="case2" data-aos="zoom-in">CASE 1.3</div>
         <img class="q3" src="./Pic/section3/case 1_11.png">
         <img class="aq5" src="./Pic/section3/User3.png">
         <div class="choose2">กรุณาเลือกรถที่คุณจะไป</div>
-        <img class="elec" src="./Pic/section3/speedtrain.png">
-        <img class="bus2" src="./รอแล้วได้อะไร/bus.png">
-        <img class="taxi1" src="./รอแล้วได้อะไร/taxi.png">
-        <img class="ans7" src="./Pic/section3/case 1_12.png">
-        <img class="ans8" src="./Pic/section3/case 1_13.png">
-        <img class="ans9" src="./Pic/section3/case 1_14.png">
-        <img class="a3" src="./Pic/section3/case 1_15.png">
+        <div onclick="clickCase1_12()">
+        <img class="elec" src="./Pic/section3/speedtrain.png"></div>
+        <div onclick="clickCase1_13()">
+        <img class="bus2" src="./รอแล้วได้อะไร/bus.png"></div>
+        <div onclick="clickCase1_14()">
+        <img class="taxi1" src="./รอแล้วได้อะไร/taxi.png"></div>
+        <img id="case 1_12" class="ans7" src="./Pic/section3/case 1_12.png">
+        <img id="case 1_13" class="ans8" src="./Pic/section3/case 1_13.png">
+        <img id="case 1_14" class="ans9" src="./Pic/section3/case 1_14.png">
+        <img  class="a3" src="./Pic/section3/case 1_15.png">
         <img class="aq6" src="./Pic/section3/User3.png">
     </div>
     <div class="yellow">
@@ -452,6 +462,25 @@
         alert("Your Link : " + copyText);
     }
 
+    var case1_2 = document.getElementById("case 1_2");
+    case1_2.style.display = "none";
+    var case1_3 = document.getElementById("case 1_3");
+    case1_3.style.display = "none";
+    var case1_4 = document.getElementById("case 1_4");
+    case1_4.style.display = "none";
+    var case1_7 = document.getElementById("case 1_7");
+    case1_7.style.display = "none";
+    var case1_8 = document.getElementById("case 1_8");
+    case1_8.style.display = "none";
+    var case1_9 = document.getElementById("case 1_9");
+    case1_9.style.display = "none";
+    var case1_12 = document.getElementById("case 1_12");
+    case1_12.style.display = "none";
+    var case1_13 = document.getElementById("case 1_13");
+    case1_13.style.display = "none";
+    var case1_14 = document.getElementById("case 1_14");
+    case1_14.style.display = "none";
+    
     var clickCase5_2_0 = document.getElementById("clickCase5_2_0");
     clickCase5_2_0.style.display = "none";
     var clickCase5_2_1 = document.getElementById("clickCase5_2_1");
@@ -476,6 +505,74 @@
     clickCase5_4_2.style.display = "none";
     var clickCase5_4_3 = document.getElementById("clickCase5_4_3");
     clickCase5_4_3.style.display = "none";
+
+
+
+
+    function clickCase1_2() {
+        if (case1_2.style.display === "block") {
+            case1_2.style.display = "none";
+        } else {    
+            case1_2.style.display = "block";
+        }
+    }
+    function clickCase1_3(){
+        if (case1_3.style.display === "block") {
+            case1_3.style.display = "none";
+        } else {
+            case1_3.style.display = "block";
+        }
+    }
+    function clickCase1_4(){
+        if (case1_4.style.display === "block") {
+            case1_4.style.display = "none";
+        } else {
+            case1_4.style.display = "block";
+        }
+    }
+    function clickCase1_7() {
+        if (case1_7.style.display === "block") {
+            case1_7.style.display = "none";
+        } else {
+            case1_7.style.display = "block";
+        }
+    }
+    function clickCase1_8(){
+        if (case1_8.style.display === "block") {
+            case1_8.style.display = "none";
+        } else {
+            case1_8.style.display = "block";
+        }
+    }
+    function clickCase1_9(){
+        if (case1_9.style.display === "block") {
+            case1_9.style.display = "none";
+        } else {
+            case1_9.style.display = "block";
+        }
+    }
+    function clickCase1_12() {
+        if (case1_12.style.display === "block") {
+            case1_12.style.display = "none";
+        } else {
+            case1_12.style.display = "block";
+        }
+    }
+    function clickCase1_13(){
+        if (case1_13.style.display === "block") {
+            case1_13.style.display = "none";
+        } else {
+            case1_13.style.display = "block";
+        }
+    }
+    function clickCase1_14(){
+        if (case1_14.style.display === "block") {
+            case1_14.style.display = "none";
+        } else {
+            case1_14.style.display = "block";
+        }
+    }
+    
     function clickCase_5_2_0() {
             if (clickCase5_2_0.style.display === "block") {
                 clickCase5_2_0.style.display = "none";
