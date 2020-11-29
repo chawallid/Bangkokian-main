@@ -386,10 +386,13 @@
     <div class="black4">
         <img class="part7" src="./Pic/section6/part7/04เห็นด้วยมั้ย_A.jpg">
         <p class="text1">แล้วคุณหล่ะ เห็นด้วยหรือไม่</p>
-        <img id="myImage" class="pic1" src="">
+        <div class="pic1" width="100%">
+            <canvas id="chart" ></canvas> 
+        </div>
+        <!-- <img id="myImage" class="pic1" src=""> -->
         <img class="pic2" src="./Pic/section2.5/gg1.png">
-        <img onclick="document.getElementById('myImage').src='./Pic/section2.5/graph.png'" class="pic3" src="./Pic/section6/part7/Agree.png">
-        <img onclick="document.getElementById('myImage').src='./Pic/section2.5/graph.png'" class="pic4" src="./Pic/section6/part7/Disagree.png">
+        <img id="เห็นด้วย" onclick="click_yes(this.id)" class="pic3" src="./Pic/section6/part7/Agree.png">
+        <img id="ไม่เห็นด้วย" onclick="click_no(this.id)" class="pic4" src="./Pic/section6/part7/Disagree.png">
     </div>
     <div class="dark5">
         <img class="part8" src="./Pic/section6/part8/05อึดอัดมั้ย_A.jpg">
@@ -414,8 +417,35 @@
 </footer>
 <!-- <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha384-7WBfQYubrFpye+dGHEeA3fHaTy/wpTFhxdjxqvK04e4orV3z+X4XC4qOX3qnkVC6" crossorigin="anonymous"></script> -->
 <script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 <script type="text/javascript">
+    const pollData = [
+            {
+                option: "เห็นด้วย",
+                votes: 30,
+                color: "rgb(127, 255, 212)"
+            },
+            {
+                option: "ไม่เห็นด้วย",
+                votes: 24,
+                color: "rgb(255, 105, 180)"
+            }
+        ];
+    function click_yes(value) {
+        pollData.find(pollOption => pollOption.option === value).votes++;
+        pollChart.data.datasets[0].data = pollData.map(pollOption => pollOption.votes);
+        pollChart.update();
+        // location.href = "#section6-vote";
+    }
+    function click_no(value) {
+        pollData.find(pollOption => pollOption.option === value).votes++;
+        pollChart.data.datasets[0].data = pollData.map(pollOption => pollOption.votes);
+        pollChart.update();
+        // location.href = "#section6-vote";
+
+
+    }
     function myFunction() {
         var copyText = "https://bangkokian.netlify.app/"
         document.execCommand("copy");
@@ -536,9 +566,58 @@
             }
         }
     
-AOS.init({
-  duration: 2400,
-})
+    AOS.init({
+    duration: 2400,
+    })
+    function rgbToRgba(rgb, alpha=1) {
+        return `rgba(${rgb.substring(rgb.indexOf('(')+1, rgb.length-1).split(',').join()}, ${alpha})`;
+    }
+    const ctx = document.getElementById('chart').getContext('2d');
+    const pollChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+                labels: pollData.map(pollOption => pollOption.option),
+                datasets: [{
+                    label: '# of Votes',
+                    data: pollData.map(pollOption => pollOption.votes),
+                    backgroundColor: pollData.map(pollOption => rgbToRgba(pollOption.color, 0.85)),
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontSize: 40,
+                            fontColor: '#fff'
+                        },
+                        gridLines: {
+                            display:false
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            display: false
+                        },
+                        gridLines: {
+                            display:false
+                        }
+                    }],
+                    
+                },
+                title: {
+                    display: true,
+                    text: '',
+                    fontColor: "#fff",
+                    fontSize: 20,
+                    padding: 20
+                },
+                legend: {
+                    display: false,
+                }
+            }
+        });
     window.addEventListener('scroll', () => {
       document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
     }, false);

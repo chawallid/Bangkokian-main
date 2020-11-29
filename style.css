@@ -1647,11 +1647,11 @@
     font-weight: 550;
 }
 .pic1{
-    width: auto;
-    height: 30vw;
+    width: 30vw;
+    height: 100vw;
     position: absolute;
-    left:42vw;
-    margin-top:15vw;
+    left:36vw;
+    margin-top:30vw;
 }
 .pic2{
     width: auto;
