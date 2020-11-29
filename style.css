@@ -851,6 +851,53 @@
     background-color: rgba(255, 98, 0,1);
     height: 262vw;
 }
+.orange2{
+    background-color: rgba(255, 98, 0,1);
+    height: 262vw;
+}
+
+.homeCaption {
+	position:fixed;
+	top: 70%;
+	left: 34%;
+    transform: translate(-50%, -50%);
+	color: rgb(255, 20, 20);
+	z-index: 1200;
+	font-size: 24px;
+	text-align: center;
+}
+
+#section6_exten {    
+    height:360vw;
+    /* background: orange; */
+    display: inline-block;
+    width: 100%;
+}
+.color-violet {
+    background-color: #7A4EAB;
+}
+.color-indigo {
+background-color: #4332CF;
+}
+.color-blue {
+background-color: #2F8FED;
+}
+.color-green {
+background-color: #4DCF42;
+}
+.color-yellow {
+background-color: #FAEB33;
+}
+.color-orange {
+background-color: #F19031;
+}
+.color-red {
+background-color: #F2293A;
+}
+.color-black {
+background-color: #000000;
+}
+
 .square{ 
     width: 100vw;
 }
@@ -1185,6 +1232,17 @@
     height: 91vw;
     background-image: url(./Pic/section6/part1/01บางอย่างก็ดี_A.jpg);
 }
+section{
+    justify-content: space-around;
+    display: flex;
+  
+  
+    /* background-color:orange; */
+    /* border: 1px solid rgb(255, 0, 0); */
+  
+    height: 130vh;
+    width: 100%;
+  }
 .square{
     width: auto;
     height: 25.95vw;
