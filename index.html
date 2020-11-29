@@ -348,7 +348,7 @@
             </div>
         </section>
 
-        <section class="homeStage" data-color="black">
+        <section class="homeStage" data-color="violet">
             <div class="homeStageContent">
                 <h1 class="projectDescription" style="display: none;">ซึ่งสาเหตุนั้นมาจาก</h1>
             </div>
@@ -359,7 +359,7 @@
         </div>
     </div>
 
-    <div class="black2">
+    <div id="next" class="black2">
        
         <!-- <p class="good1" data-aos="zoom-in">นั่นก็เพราะ...</p> -->
         <!-- <p class="good2" data-aos="zoom-in">ความเหลื่อมล้ำไงล่ะ</p> -->
@@ -752,10 +752,11 @@
                     var pos = $('.homeCaption').offset();
                     let pos2 = $('#section6_exten').offset();
                     pos2 = pos2.top ; 
+                    let pos3 = $('#next').offset().top;
                     
                     $('.homeStage').each(function () {
                         delta = $(this).next().offset().top - $(this).offset().top ;
-                        // console.log("pos",pos.top,"pos2",pos2,"delta",delta)
+                        console.log("pos",pos.top,"pos2",pos2,"pos3",pos3)
                         if (pos.top >= $(this).offset().top && pos.top <= $(this).next().offset().top) {
 
                             var projectDescription = $(this).find('.projectDescription');
@@ -779,18 +780,29 @@
                         }
                         
                         var test = document.getElementById("test");
-                        var tmp = 0 ; 
-                        if((pos.top <= pos2 || pos.top >= (pos2+(1404*3))-2000)&& tmp == 0){
+                        var tmp = 0 ;
+                        var check = true ;
+
+                        if(check == true){
+                            tmp = pos.top ;
+                            check = false;
+                        }
+                        
+                       
+                        if((pos.top <= pos2 || pos.top > pos3 - 1200)){
                             // console.log(pos.top,pos2+delta*3.0-1000);
                             test.style.display = "none";
                             index = 0;
                             
-                            return;
+                            // return;
                         }else{
-                            tmp = 1; 
+                            // tmp = 1; 
+                            
                             test.style.display = "block";
                             // tmp = 0;
                         }
+                        // tmp = pos.top;
+                        
                         
                     });
                 });
