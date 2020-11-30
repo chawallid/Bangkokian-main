@@ -1340,7 +1340,7 @@ section{
 }
 .black2{
     background-color: #000000;
-    height: 267vw;
+    height: 150vw;
 }
 .good1{
     color: #ffffff;
@@ -1376,14 +1376,14 @@ section{
     width: auto;
     height: 52.6vw;
     position: absolute;
-    margin-top: 145vw;
+    margin-top: 20vw;
     left: 0vw;
 }
 .sahed2{
     width: auto;
     height: 62.7vw;
     position: absolute;
-    margin-top: 200vw;
+    margin-top: 72vw;
     left: -7.5vw;
 }
 .tana{
@@ -1392,7 +1392,7 @@ section{
     text-align: center;
     font-family: 'Chakra Petch';
     position: absolute;
-    margin-top: 186.5vw;
+    margin-top: 62vw;
     left: 17vw;
     font-weight: 700;
 }
@@ -1402,7 +1402,7 @@ section{
     text-align: center;
     font-family: 'Chakra Petch';
     position: absolute;
-    margin-top: 242vw;
+    margin-top: 122vw;
     left: 17vw;
     font-weight: 700;
 }
