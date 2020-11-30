@@ -348,7 +348,7 @@
             </div>
         </section>
 
-        <section class="homeStage" data-color="violet">
+        <section class="homeStage" data-color="black">
             <div class="homeStageContent">
                 <h1 class="projectDescription" style="display: none;">ซึ่งสาเหตุนั้นมาจาก</h1>
             </div>
@@ -684,61 +684,50 @@
             $( document ).ready(function() {
                 $(window).on("scroll resize", function () {
                     var pos = $('.homeCaption').offset();
-                    let pos2 = $('#section6_exten').offset();
-                    pos2 = pos2.top ; 
+                    let pos2 = $('#section6_exten').offset().top ;
                     let pos3 = $('#next').offset().top;
-                    
+                    var tmp = 0 ; 
                     $('.homeStage').each(function () {
                         delta = $(this).next().offset().top - $(this).offset().top ;
-                        console.log("pos",pos.top,"pos2",pos2,"pos3",pos3)
+                        console.log("pos",pos.top,"pos3",pos3)
+                        var test = document.getElementById("test");
                         if (pos.top >= $(this).offset().top && pos.top <= $(this).next().offset().top) {
-
                             var projectDescription = $(this).find('.projectDescription');
-
                             $('.homeCaption').html(projectDescription.text());
                             if(pos.top > pos2  && pos.top <= (pos2+delta)){
+                                test.style.display = "block";
                                 $('.homeCaption').css('color', text_color[0]);
                             }else if(pos.top > (pos2+delta) && pos.top <= (pos2+delta*2)){
+                                test.style.display = "block";
                                 $('.homeCaption').css('color', text_color[1]);
-                            }else if(pos.top > (pos2+delta*2)){
+                            }else if(pos.top > (pos2+delta*2) && pos.top <  pos3 -1000){
+                                test.style.display = "block";
                                 $('.homeCaption').css('color', text_color[2]);
                             }
-
                             $body = $('#section6_exten');
                             $body.removeClass(function (index, css) {
                                 return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
                             });
                             $body.addClass('color-' + $(this).data('color'));
-
                             return; 
                         }
                         
-                        var test = document.getElementById("test");
-                        var tmp = 0 ;
-                        var check = true ;
-
-                        if(check == true){
-                            tmp = pos.top ;
-                            check = false;
-                        }
                         
-                       
-                        if((pos.top <= pos2 || pos.top > pos3 - 1200)){
-                            // console.log(pos.top,pos2+delta*3.0-1000);
-                            test.style.display = "none";
-                            index = 0;
-                            
-                            // return;
-                        }else{
-                            // tmp = 1; 
-                            
-                            test.style.display = "block";
-                            // tmp = 0;
-                        }
+                        
+                        
+                        
                         // tmp = pos.top;
                         
                         
                     });
+                    if((pos.top <= pos2 || pos.top > pos3 -1000 )){
+                            console.log("OUT");
+                            test.style.display = "none";
+                            // window.scrollTo(0, pos3);
+                            // index = 0;
+                            
+                            // return;
+                        }
                 });
                 $(document).ready(function () {
                     $(window).trigger('scroll');
