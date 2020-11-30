@@ -694,18 +694,20 @@ body{
 }
 .mzebra1{
     width: auto;
-    height: 25.5vw;
+    height: 27.5vw;
     position: absolute;
     margin-top: 229vw;
-    left: 16vw;
-    animation: ze1 1s linear infinite;
+    left: 10vw;
+    /* animation: ze1 0.5s linear infinite;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -1s);
+    animation-delay: calc(var(--scroll) * -1s); */
 }
 @keyframes ze1 {
-  0% { left: -2vw; transform: scale(0.5);}
-  32% { left: -2vw;  transform: scale(0.5);}
-  34.3%{ left: 16vw; transform: scale(1);}
+    0% { left: -10vw; transform: scale(0.5);}
+    20% { left: 4vw;  transform: scale(0.5);}
+    40%{ left: 10vw; transform: scale(1);}
+ 
+
 }
 .mzebra2{
     transition: 0.25s;
@@ -715,9 +717,9 @@ body{
     margin-top: 235.5vw;
     left: 40.5vw;
     z-index: 2;
-    animation: ze2 1s linear infinite;
+    /* animation: ze2 1s linear infinite;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * -1s);
+    animation-delay: calc(var(--scroll) * -1s); */
 }
 @keyframes ze2 {
   0% { left: 10vw; transform: scale(1);}

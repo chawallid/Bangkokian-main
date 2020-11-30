@@ -219,9 +219,9 @@
         <img class="preg2" src="./Pic/section4/รถเมล์/คนท้อง2.png">
         <img class="bad2" src="./Pic/section4/รถเมล์/คนพิการ2.png">
         <img class="zebra" src="./รอแล้วได้อะไร/zebra.png">
-        <img class="pzebra" src="./รอแล้วได้อะไร/pzebra.png">
-        <img class="mzebra1" src="./รอแล้วได้อะไร/mzebra1.png">
-        <img class="mzebra2" src="./รอแล้วได้อะไร/mzebra2.png">
+        <img class="pzebra" src="./รอแล้วได้อะไร/pzebra.png" >
+        <img class="mzebra1" data-center="opacity:1;left:20%;" data-start="opacity:0;left:-200%;"  src="./รอแล้วได้อะไร/mzebra1.png"  width="1707" height="auto">
+        <img class="mzebra2" data--100-bottom="opacity:1;left:70%;" data-100-bottom="opacity:1;left:0%;"   src="./รอแล้วได้อะไร/mzebra2.png">
         <div class="ytext3">ในวันที่ทุกคน ข้ามทางม้าลาย</div>
         <img class="nor3" src="./Pic/section4/ข้ามถนน/คนปกติ3.png">
         <img class="inj3" src="./Pic/section4/ข้ามถนน/คนขาเจ็บ3.png">
@@ -360,7 +360,6 @@
     </div>
 
     <div id="next" class="black2">
-       
         <!-- <p class="good1" data-aos="zoom-in">นั่นก็เพราะ...</p> -->
         <!-- <p class="good2" data-aos="zoom-in">ความเหลื่อมล้ำไงล่ะ</p> -->
         <!-- <p class="good3" data-aos="zoom-in">ซึ่งสาเหตุนั้นมาจาก</p> -->
@@ -682,6 +681,7 @@
             let count   = 0;
             let index = 0;
             $( document ).ready(function() {
+                var s = skrollr.init();
                 $(window).on("scroll resize", function () {
                     var pos = $('.homeCaption').offset();
                     let pos2 = $('#section6_exten').offset().top ;
@@ -711,31 +711,19 @@
                             $body.addClass('color-' + $(this).data('color'));
                             return; 
                         }
-                        
-                        
-                        
-                        
-                        
-                        // tmp = pos.top;
-                        
-                        
                     });
                     if((pos.top <= pos2 || pos.top > pos3 -1000 )){
                             console.log("OUT");
                             test.style.display = "none";
-                            // window.scrollTo(0, pos3);
-                            // index = 0;
-                            
-                            // return;
-                        }
+
+                    }
                 });
-                $(document).ready(function () {
-                    $(window).trigger('scroll');
-                });
+
+             
             });
+        window.addEventListener('scroll', () => {
+                document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+            }, false);
     
-    window.addEventListener('scroll', () => {
-      document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-    }, false);
     </script>
 </html>
