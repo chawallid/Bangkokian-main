@@ -24,7 +24,7 @@ body{
 
 }
 
-#red {
+#red{
     background-color: red;
 }
 .next{
@@ -52,7 +52,9 @@ body{
     animation-name: rl;
     animation-duration: 1s;
 }
-
+#main{
+    height: 260vw;
+}
 #black {
     background-color: black;
     height: 152vw;
